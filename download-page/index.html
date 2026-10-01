@@ -5,7 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Gerenciador de Lucros — baixar para Windows</title>
 <meta name="description" content="Gerencie suas sessões, acompanhe seus resultados e mantenha todo o seu histórico diretamente no seu computador." />
-<link rel="icon" href="data:,">
+<meta property="og:title" content="Gerenciador de Lucros" />
+<meta property="og:description" content="Gerencie suas sessões, acompanhe seus resultados e mantenha todo o seu histórico diretamente no seu computador." />
+<meta property="og:type" content="website" />
+<link rel="icon" type="image/png" href="favicon.png" />
 <style>
   :root {
     --bg: #f3f4f6;
@@ -135,6 +138,9 @@
           <span id="file-size">—</span>
           <span>Funciona offline</span>
         </div>
+        <div class="meta-row" style="margin-top:4px;">
+          <span id="file-name">—</span>
+        </div>
       </div>
       <a class="btn-download" id="download-link" href="#" download>
         ⬇ Baixar para Windows
@@ -177,9 +183,10 @@
     // ---------------------------------------------------------------
     const RELEASE = {
       version: "1.0.0",
-      date: "30/09/2026",
+      date: "01/10/2026",
       sizeLabel: "~2,3 MB",
-      downloadUrl: "https://SUBSTITUA-PELO-LINK-DO-INSTALADOR/Gerenciador-de-Lucros-Setup-1.0.0.exe",
+      fileName: "Gerenciador-de-Lucros-Setup-1.0.0.exe",
+      downloadUrl: "https://github.com/Thalison74/Sistema/releases/download/v1.0.0/Gerenciador-de-Lucros-Setup-1.0.0.exe",
       changelog: [
         {
           version: "1.0.0",
@@ -199,7 +206,9 @@
     document.getElementById("version-label").textContent = RELEASE.version;
     document.getElementById("release-date").textContent = RELEASE.date;
     document.getElementById("file-size").textContent = RELEASE.sizeLabel;
+    document.getElementById("file-name").textContent = RELEASE.fileName;
     document.getElementById("download-link").href = RELEASE.downloadUrl;
+    document.getElementById("download-link").setAttribute("download", RELEASE.fileName);
 
     const changelogRoot = document.getElementById("changelog-list");
     RELEASE.changelog.forEach((entry) => {
