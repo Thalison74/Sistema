@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Gerenciador de Lucros — baixar para Windows</title>
+<meta name="description" content="Gerencie suas sessões, acompanhe seus resultados e mantenha todo o seu histórico diretamente no seu computador." />
+<link rel="icon" href="data:,">
+<style>
+  :root {
+    --bg: #f3f4f6;
+    --surface: #ffffff;
+    --surface-alt: #f8f9fb;
+    --border: #e3e5ea;
+    --text: #1a1d23;
+    --text-muted: #6b7280;
+    --accent: #2f6690;
+    --accent-foreground: #ffffff;
+    --positive: #15803d;
+    --positive-bg: #eafbf1;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14161b;
+      --surface: #1b1e25;
+      --surface-alt: #20232c;
+      --border: #2b2f3a;
+      --text: #e6e8ee;
+      --text-muted: #959cab;
+      --accent: #6ba6d6;
+      --accent-foreground: #0b0e14;
+      --positive: #4fcc8a;
+      --positive-bg: #112019;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 0 20px; }
+  header.top {
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+  }
+  header.top .wrap { display: flex; align-items: center; gap: 10px; }
+  .logo {
+    width: 28px; height: 28px; border-radius: 6px;
+    background: var(--accent); color: var(--accent-foreground);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 700;
+  }
+  .brand { font-weight: 600; font-size: 14px; }
+
+  main { padding: 64px 0 40px; }
+  h1 { font-size: 30px; margin: 0 0 10px; letter-spacing: -0.01em; }
+  .subtitle { color: var(--text-muted); font-size: 16px; max-width: 520px; line-height: 1.5; margin: 0 0 32px; }
+
+  .download-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .version-info .version { font-size: 13px; color: var(--text-muted); margin-bottom: 4px; }
+  .version-info .version strong { color: var(--text); font-weight: 600; }
+  .version-info .platform { font-size: 20px; font-weight: 600; }
+  .meta-row { margin-top: 10px; display: flex; gap: 16px; flex-wrap: wrap; font-size: 12px; color: var(--text-muted); }
+
+  .btn-download {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: var(--accent); color: var(--accent-foreground);
+    padding: 12px 20px; border-radius: 8px; text-decoration: none;
+    font-weight: 600; font-size: 14px;
+    white-space: nowrap;
+  }
+  .btn-download:hover { opacity: 0.92; }
+
+  section.block {
+    margin-top: 28px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 24px;
+  }
+  section.block h2 {
+    font-size: 14px; text-transform: uppercase; letter-spacing: 0.03em;
+    color: var(--text-muted); margin: 0 0 12px;
+  }
+  .privacy-points { margin: 0; padding-left: 18px; font-size: 14px; line-height: 1.8; }
+  .privacy-points li { color: var(--text); }
+
+  .changelog-version { font-size: 14px; font-weight: 600; margin: 0 0 6px; }
+  .changelog ul { margin: 0 0 18px; padding-left: 18px; font-size: 14px; color: var(--text-muted); line-height: 1.7; }
+  .changelog ul:last-child { margin-bottom: 0; }
+
+  footer { padding: 32px 0 48px; color: var(--text-muted); font-size: 12px; text-align: center; }
+
+  @media (max-width: 560px) {
+    main { padding: 40px 0 24px; }
+    h1 { font-size: 24px; }
+    .download-card { flex-direction: column; align-items: stretch; }
+    .btn-download { justify-content: center; }
+  }
+</style>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <div class="logo">GL</div>
+      <div class="brand">Gerenciador de Lucros</div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <h1>Gerenciador de Lucros</h1>
+    <p class="subtitle">
+      Gerencie suas sessões, acompanhe seus resultados e mantenha todo o seu histórico diretamente no seu computador.
+    </p>
+
+    <div class="download-card">
+      <div class="version-info">
+        <div class="version">Versão atual: <strong id="version-label">1.0.0</strong></div>
+        <div class="platform">Windows</div>
+        <div class="meta-row">
+          <span id="release-date">—</span>
+          <span id="file-size">—</span>
+          <span>Funciona offline</span>
+        </div>
+      </div>
+      <a class="btn-download" id="download-link" href="#" download>
+        ⬇ Baixar para Windows
+      </a>
+    </div>
+
+    <section class="block">
+      <h2>Requisitos</h2>
+      <p style="margin:0;font-size:14px;color:var(--text-muted);line-height:1.7;">
+        Windows 10 ou superior (64 bits). Não é necessário instalar Node.js, Rust ou qualquer outra ferramenta —
+        basta baixar o instalador e executar.
+      </p>
+    </section>
+
+    <section class="block">
+      <h2>Seus dados ficam no seu computador</h2>
+      <ul class="privacy-points">
+        <li>Não existe login nem cadastro.</li>
+        <li>Seus registros ficam armazenados localmente, neste computador.</li>
+        <li>O programa funciona 100% offline.</li>
+        <li>Os dados não são enviados automaticamente para nenhum servidor.</li>
+      </ul>
+    </section>
+
+    <section class="block changelog">
+      <h2>Novidades da versão</h2>
+      <div id="changelog-list">
+        <!-- preenchido por script -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Gerenciador de Lucros — aplicativo local, sem anúncios e sem cadastro.
+  </footer>
+
+  <script>
+    // ---------------------------------------------------------------
+    // Edite apenas este bloco ao publicar uma nova versão.
+    // ---------------------------------------------------------------
+    const RELEASE = {
+      version: "1.0.0",
+      date: "30/09/2026",
+      sizeLabel: "~2,3 MB",
+      downloadUrl: "https://SUBSTITUA-PELO-LINK-DO-INSTALADOR/Gerenciador-de-Lucros-Setup-1.0.0.exe",
+      changelog: [
+        {
+          version: "1.0.0",
+          items: [
+            "Dashboard de resultados",
+            "Gerenciamento de sessões",
+            "Cálculo automático por saldo inicial/final",
+            "Histórico com busca e filtros",
+            "Backup e restauração local",
+            "Tema claro e escuro",
+          ],
+        },
+      ],
+    };
+    // ---------------------------------------------------------------
+
+    document.getElementById("version-label").textContent = RELEASE.version;
+    document.getElementById("release-date").textContent = RELEASE.date;
+    document.getElementById("file-size").textContent = RELEASE.sizeLabel;
+    document.getElementById("download-link").href = RELEASE.downloadUrl;
+
+    const changelogRoot = document.getElementById("changelog-list");
+    RELEASE.changelog.forEach((entry) => {
+      const title = document.createElement("p");
+      title.className = "changelog-version";
+      title.textContent = "Versão " + entry.version;
+      changelogRoot.appendChild(title);
+
+      const list = document.createElement("ul");
+      entry.items.forEach((item) => {
+        const li = document.createElement("li");
+        li.textContent = item;
+        list.appendChild(li);
+      });
+      changelogRoot.appendChild(list);
+    });
+  </script>
+</body>
+</html>
